@@ -1,3 +1,4 @@
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,8 +14,8 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
     <title>TevStudio</title>
   </head>
   <body data-spy="scroll" data-target="#main-nav" id="home">
@@ -24,7 +25,7 @@
     >
       <div class="container">
         <a href="index.html" class="navbar-brand"
-          ><img class="logo" src="./css/img/logo_transparent.png"
+          ><img class="logo" src="{% static 'img/logo_transparent.png' %}"
         /></a>
         <button
           class="navbar-toggler"
@@ -168,8 +169,7 @@
         <div class="row">
           <div class="col-md-6">
             <img
-              src="css/img/harley.jpg"
-              alt="explore1"
+              src="{% static 'img/harley.jpg' %}" alt="harley"
               class="img-fluid mb-3 rounded-circle"
             />
           </div>
