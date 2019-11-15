@@ -278,42 +278,30 @@
   </div>
 </header>
 
-<!-- Page Content -->
-<div class="container">
-  <div class="row">
-    <!-- Team Member 1 -->
-    <div class="col-xl-4 col-md-3 mb-4">
-      <div class="card border-0 shadow">
-        <img src="css/img/diegodev1.jpeg" class="card-img-top" alt="diegodev">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Diego Tev<br>Web Developer</div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Member 2 -->
-    <div class="col-xl-4 col-md-3 mb-4">
-      <div class="card border-0 shadow">
-        <img src="css/img/ariel.jpg" class="card-img-top" alt="ariel">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Ariel Tev<br>Web Developer</div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Member 3 -->
-    <div class="col-xl-4 col-md-3 mb-4">
-      <div class="card border-0 shadow">
-        <img src="css/img/ale.jpg" class="card-img-top" alt="ale">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Ale Tev<br>Web Designer</div>
-        </div>
-      </div>
-    </div>
-    
-
-</section>
+        <!-- Team -->
+        <section id="team" class="py-5">
+          <div class="container">
+            <h2 class="text-center">Our Team</h2>
+            <div class="card-deck"">
+              {% if developer %}
+                {% for dev_item in developer %}
+                  <div class="card">
+                    <img src="{{ dev_item.photo.url }}" class="card-img-top" alt="team">
+                    <div class="card-body text-body">
+                        <h5 class="card-title">{{dev_item.name}}</h5>
+                        <p class="card-text">{{dev_item.description}}</p>
+                    </div>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="col-md-12">
+                  <p>No Developers Available</p>
+                </div>
+              {% endif %}
+  
+            </div>
+          </div>
+        </section>
 
     <!------------BUTTON FOR MODAL----------->
     <section>
