@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w^q89cmoj@!c2^k)y*%_jq%azy!-4h24_5xroq87w3snfayhz@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tevdevelops.appspot.com']
 
 
 # Application definition
@@ -74,15 +74,6 @@ WSGI_APPLICATION = 'landingsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-""" DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': '/cloudsql/tevdevelops:europe-west2:tevinstance',
-        'NAME':'Developers',
-        'USER':'admin',
-        'PASSWORD':'admin123',
-    }
-} """
 if os.getenv('GAE_APPLICATION', None):
     # Running on production App Engine, so connect to Google Cloud SQL using
     # the unix socket at /cloudsql/<your-cloudsql-connection string>
@@ -105,7 +96,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '127.0.0.1',
+            'HOST': 'localhost'#'127.0.0.1',
             'PORT': '3306',
             'NAME': 'Developers',
             'USER': 'admin',
