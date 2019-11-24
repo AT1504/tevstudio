@@ -20,12 +20,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
+<<<<<<< HEAD
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'w^q89cmoj@!c2^k)y*%_jq%azy!-4h24_5xroq87w3snfayhz@' #os.environ['SECRET_KEY']
 
 ALLOWED_HOSTS = ['localhost','tevdevelops.appspot.com', 'tevstudio.com', 'www.tevstudio.com']
+=======
+ALLOWED_HOSTS = ['tevdevelops.appspot.com']
+>>>>>>> 2c1f712159fd0a1a0562bb7f077b0b762c79f5d5
 
 
 # Application definition
@@ -74,7 +78,11 @@ WSGI_APPLICATION = 'landingsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+<<<<<<< HEAD
 if (True): #os.getenv('GAE_APPLICATION', None):
+=======
+if os.getenv('GAE_APPLICATION', None):
+>>>>>>> 2c1f712159fd0a1a0562bb7f077b0b762c79f5d5
     # Running on production App Engine, so connect to Google Cloud SQL using
     # the unix socket at /cloudsql/<your-cloudsql-connection string>
     DATABASES = {
@@ -96,8 +104,13 @@ else:
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
     DATABASES = {
         'default': {
+<<<<<<< HEAD
             'ENGINE': 'django.db.backends.mysql', #os.environ.get('ENGINE_DJANGO'),
             'HOST': '127.0.0.1', #'localhost'
+=======
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': 'localhost'#'127.0.0.1',
+>>>>>>> 2c1f712159fd0a1a0562bb7f077b0b762c79f5d5
             'PORT': '3306',
             'NAME': '', #os.environ.get('DB_NAME'),
             'USER': '', #os.environ.get('DB_USER'),
