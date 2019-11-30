@@ -1,0 +1,61 @@
+<!-- templates/landing/email.html -->
+<form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="your_name">Your name: </label>
+            <input id="your_name" type="text" name="your_name" maxlength="100" required>
+        </div> 
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            placeholder="Your e-mail"
+          /><label>Subject</label>
+        </div>
+        <div class="form-group">
+          <input type="textarea"><br><label for="my-textarea">What kind of website do you need?</label>
+            <textarea
+              id="my-textarea"
+              class="form-control"
+              name="form"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit">Send</button>
+        </div>
+</form>
+<!-- <div class="modal fade text-dark" id="contactModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Contact us</h5>
+              <button class="close" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="name">Your name</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="email">Your e-mail</label>
+                  <input type="email" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="name">Your message</label>
+                  <textarea class="form-control"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary btn-block">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+</div> -->

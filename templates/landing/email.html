@@ -1,0 +1,6 @@
+<!-- templates/email.html -->
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>

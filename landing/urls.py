@@ -1,7 +1,9 @@
+# sendemail/urls.py
+from django.contrib import admin
 from django.urls import path
-
-from . import views
+from .views import index, successView
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', index, name='index'),
+    path('success/', successView, name='success'),
 ]

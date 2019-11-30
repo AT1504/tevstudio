@@ -21,8 +21,8 @@ local_settings.py
 /media
 venv
 /static
-#app.yaml
-#settings.py
+app.yaml
+settings.py
 
 # Build results
 [Dd]ebug/

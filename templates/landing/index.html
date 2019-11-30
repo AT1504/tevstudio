@@ -106,6 +106,8 @@
                 <div class="card-body">
                   <h3>Contact us today!</h3>
                   <p>Get your own clean, responsive website now</p>
+                  {% include 'landing/email.html' %}
+                  <!-------------Contact us form-----------
                   <form>
                     <div class="form-group">
                       <input
@@ -136,7 +138,7 @@
                       value="submit"
                       class="btn btn-outline-light btn-block"
                     />
-                  </form>
+                  </form> -------------->
                 </div>
               </div>
             </div>
@@ -328,8 +330,7 @@
         </div>
             </footer>
        </section>       
-
-    <!------------------------MODAL OPENS FOR CONTACT FORM------------------------->
+    <!------------------------MODAL OPENS FOR CONTACT FORM------------------->
 
     <div class="modal fade text-dark" id="contactModal">
       <div class="modal-dialog">
@@ -341,7 +342,8 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            {% include 'landing/email.html' %}
+            <!-- <form>
               <div class="form-group">
                 <label for="name">Your name</label>
                 <input type="text" class="form-control" />
@@ -354,7 +356,7 @@
                 <label for="name">Your message</label>
                 <textarea class="form-control"></textarea>
               </div>
-            </form>
+            </form> -->
           </div>
           <div class="modal-footer">
             <button class="btn btn-primary btn-block">
@@ -364,7 +366,7 @@
         </div>
       </div>
     </div>
-
+    
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
