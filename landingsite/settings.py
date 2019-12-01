@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,16 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-<<<<<<< HEAD
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w^q89cmoj@!c2^k)y*%_jq%azy!-4h24_5xroq87w3snfayhz@' #os.environ['SECRET_KEY']
+SECRET_KEY = os.environ['SECRET_KEY']
 
 ALLOWED_HOSTS = ['localhost','tevdevelops.appspot.com', 'tevstudio.com', 'www.tevstudio.com']
-=======
-ALLOWED_HOSTS = ['tevdevelops.appspot.com']
->>>>>>> 2c1f712159fd0a1a0562bb7f077b0b762c79f5d5
 
 
 # Application definition
@@ -78,21 +76,17 @@ WSGI_APPLICATION = 'landingsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-<<<<<<< HEAD
-if (True): #os.getenv('GAE_APPLICATION', None):
-=======
 if os.getenv('GAE_APPLICATION', None):
->>>>>>> 2c1f712159fd0a1a0562bb7f077b0b762c79f5d5
     # Running on production App Engine, so connect to Google Cloud SQL using
     # the unix socket at /cloudsql/<your-cloudsql-connection string>
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql', #os.environ.get('ENGINE_DJANGO'),
-            'HOST': '/cloudsql/tevdevelops:europe-west2:tevinstance', #os.environ.get('DB_HOST'),
-            'PORT': '3306', #os.environ.get('DB_PORT'),
-            'USER': '', #os.environ.get('DB_USER'),
-            'PASSWORD': '', #os.environ.get('DB_PASSWORD'),
-            'NAME': '' #os.environ.get('DB_NAME')
+            'ENGINE': os.environ['ENGINE_DJANGO'],
+            'HOST': os.environ['DB_HOST'],
+            'PORT': os.environ['DB_PORT'],
+            'USER': os.environ['DB_USER'],
+            'PASSWORD': os.environ['DB_PASSWORD'],
+            'NAME': os.environ['DB_NAME']
         }
     }
 else:
@@ -104,17 +98,12 @@ else:
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
     DATABASES = {
         'default': {
-<<<<<<< HEAD
-            'ENGINE': 'django.db.backends.mysql', #os.environ.get('ENGINE_DJANGO'),
+            'ENGINE': os.environ['ENGINE_DJANGO'],
             'HOST': '127.0.0.1', #'localhost'
-=======
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': 'localhost'#'127.0.0.1',
->>>>>>> 2c1f712159fd0a1a0562bb7f077b0b762c79f5d5
-            'PORT': '3306',
-            'NAME': '', #os.environ.get('DB_NAME'),
-            'USER': '', #os.environ.get('DB_USER'),
-            'PASSWORD': '' #os.environ.get('DB_PASSWORD')
+            'PORT': os.environ['DB_PORT'],
+            'NAME': os.environ['DB_NAME'],
+            'USER': os.environ['DB_USER'], 
+            'PASSWORD': os.environ['DB_PASSWORD'],
         }
     }
 
@@ -165,3 +154,5 @@ STATICFILES_DIRS=[
 #Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

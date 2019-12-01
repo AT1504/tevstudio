@@ -38,8 +38,8 @@ def index(request):#, developer_id):
             #     return HttpResponse('Invalid header found.')
             # return redirect('success')
 
-            api_key = os.environ['EMAIL_API_KEY'] #'cddf2c5adf8be75c827d484f2dc72807'
-            api_secret = os.environ['EMAIL_API_SECRET'] #'0dca9970ca7a4742a771ef0bee265462'
+            api_key = os.environ['EMAIL_API_KEY']
+            api_secret = os.environ['EMAIL_API_SECRET']
             mailjet = Client(auth=(api_key, api_secret), version='v3.1')
             data = {
             'Messages': [

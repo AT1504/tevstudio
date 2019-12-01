@@ -19,10 +19,11 @@
 __pycache__/
 local_settings.py
 /media
-venv
+/venv_tevstudio
+landingsite/.env
 /static
 app.yaml
-settings.py
+#settings.py
 
 # Build results
 [Dd]ebug/
