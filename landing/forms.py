@@ -6,3 +6,4 @@ class ContactForm(forms.Form):
     your_email = forms.EmailField(required=True)
     your_subject = forms.CharField(required=True)
     your_message = forms.CharField(widget=forms.Textarea(attrs={'rows': '5'}))
+    cc_myself = forms.BooleanField(required=False)

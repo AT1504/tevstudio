@@ -22,7 +22,7 @@ local_settings.py
 /venv_tevstudio
 landingsite/.env
 /static
-app.yaml
+#app.yaml
 #settings.py
 
 # Build results

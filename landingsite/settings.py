@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost','tevdevelops.appspot.com', 'tevstudio.com', 'www.te
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
     'landing.apps.LandingConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -156,3 +157,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CRISPY_TEMPLATE_PACK='bootstrap4'

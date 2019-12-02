@@ -19,8 +19,11 @@ def index(request):#, developer_id):
             your_subject = form.cleaned_data['your_subject'] # request.POST['subject']
             your_email = form.cleaned_data['your_email'] # request.POST['email']
             your_message = form.cleaned_data['your_message'] # request.POST['message']
+            recipients = ['arotev@gmail.com', 'tevdiego@gmail.com']
+            if cc_myself:
+                recipients.append(sender)
             # try:
-            #     send_mail(subject, message, from_email, ['arotev@gmail.com'])
+            #     send_mail(subject, message, from_email, recipients)
             #     # mail.send_mail(
             #     #     sender="arotev@gmail.com",
             #     #     to="Ariel Tevelev <arotev@gmail.com>",
@@ -50,7 +53,7 @@ def index(request):#, developer_id):
                 },
                 "To": [
                     {
-                    "Email": "arotev@gmail.com",
+                    "Email": recipients,
                     "Name": your_name
                     }
                 ],

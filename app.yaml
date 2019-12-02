@@ -5,18 +5,18 @@ entrypoint: gunicorn -b :$PORT landingsite.wsgi # specific to a GUnicorn HTTP se
 
 # any environment variables you want to pass to your application.
 # accessible through os.environ['VARIABLE_NAME']
-env_variables:
-  ENGINE_DJANGO: 'django.db.backends.mysql'
-  SECRET_KEY: ''
-  BUCKET_NAME: ''
-# everything after /cloudsql/ can be found by entering >> gcloud sql instances describe DATABASE-NAME << in your Terminal
-# the DATABASE-NAME is the name you gave your project's PostgreSQL database
-# the second line from the describe output called connectionName can be copied and pasted after /cloudsql/
-  DB_HOST: '/cloudsql/tevdevelops:europe-west2:tevinstance'
-  DB_PORT: '3306' # '3306' MYSQL port - '5432'  PostgreSQL port
-  DB_NAME: 'Developers'
-  DB_USER: '' # either 'postgres' (default) or one you created on the PostgreSQL instance page
-  DB_PASSWORD: ''
+# env_variables:
+#   ENGINE_DJANGO: 'django.db.backends.mysql'
+#   SECRET_KEY: ''
+#   BUCKET_NAME: ''
+# # everything after /cloudsql/ can be found by entering >> gcloud sql instances describe DATABASE-NAME << in your Terminal
+# # the DATABASE-NAME is the name you gave your project's PostgreSQL database
+# # the second line from the describe output called connectionName can be copied and pasted after /cloudsql/
+#   DB_HOST: ''
+#   DB_PORT: '' # '3306' MYSQL port - '5432'  PostgreSQL port
+#   DB_NAME: ''
+#   DB_USER: '' # either 'postgres' (default) or one you created on the PostgreSQL instance page
+#   DB_PASSWORD: ''
   
   STATIC_URL: 'https://storage.googleapis.com/tevstudio-static/static/' # this is the url that you sync static files to
 
