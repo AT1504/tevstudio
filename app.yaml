@@ -5,7 +5,7 @@ entrypoint: gunicorn -b :$PORT landingsite.wsgi # specific to a GUnicorn HTTP se
 
 # any environment variables you want to pass to your application.
 # accessible through os.environ['VARIABLE_NAME']
-# env_variables:
+env_variables:
 #   ENGINE_DJANGO: 'django.db.backends.mysql'
 #   SECRET_KEY: ''
 #   BUCKET_NAME: ''
